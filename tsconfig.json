@@ -16,7 +16,12 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "baseUrl": "./", // Définit la racine du projet
+    "paths": {
+      "src/*": ["src/*"], // Alias pour accéder aux fichiers dans src/
+      "src/app/*": ["src/app/*"] // Alias pour accéder aux fichiers dans src/app/
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

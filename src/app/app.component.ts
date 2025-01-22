@@ -3,10 +3,12 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true, // Rend le composant autonome
+  imports: [RouterOutlet], // Ajoute RouterOutlet pour gérer les routes
+  template: `
+    <h1>Pokédex</h1>
+    <router-outlet></router-outlet>
+  `,
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'pokedex';
-}
+export class AppComponent {}
