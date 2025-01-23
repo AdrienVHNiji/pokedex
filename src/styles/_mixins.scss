@@ -1,0 +1,12 @@
+// Mixin pour un conteneur centré
+@mixin center-container($max-width: 1200px) {
+    margin: 0 auto;
+    max-width: $max-width;
+    padding: 0 $spacing-unit;
+  }
+  
+  // Mixin pour une transition simple
+  @mixin transition($property: all, $duration: 0.3s, $ease: ease-in-out) {
+    transition: $property $duration $ease;
+  }
+  

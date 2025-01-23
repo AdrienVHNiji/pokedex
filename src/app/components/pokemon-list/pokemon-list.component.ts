@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
-  standalone: true, // Rend le composant autonome
-  imports: [CommonModule], // Ajoute les modules nécessaires pour ce composant
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit {
-  pokemons: any[] = []; // Remplace par un tableau typé si nécessaire
+  pokemons: any[] = [];
   
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
@@ -26,9 +26,7 @@ export class PokemonListComponent implements OnInit {
       }));
     });
   }
-  // Définition de la méthode selectPokemon
   selectPokemon(name: string): void {
-    // Redirection vers la page de détails du Pokémon
     this.router.navigate(['/pokemon', name]);
   }
 }

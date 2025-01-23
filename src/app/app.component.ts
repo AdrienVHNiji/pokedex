@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Rend le composant autonome
-  imports: [RouterOutlet], // Ajoute RouterOutlet pour gérer les routes
+  standalone: true, 
+  imports: [RouterOutlet], 
   template: `
     <h1>Pokédex</h1>
     <router-outlet></router-outlet>

@@ -1,0 +1,101 @@
+@use 'variables' as vars;
+@use 'mixins' as mixs;
+@use 'base' as base;
+
+
+.pokemon-detail-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .pokemon-header {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #f8f8f8;
+        border: 2px solid #ddd;
+      }
+  
+      h1 {
+        font-size: 2rem;
+        color: vars.$primary-color;
+        margin-top: 1rem;
+      }
+    }
+  
+    .pokemon-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+  
+      .pokemon-types,
+      .pokemon-stats {
+        flex: 1;
+        min-width: 250px;
+  
+        h3 {
+          font-size: 1.5rem;
+          color: vars.$secondary-color;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: vars.$text-color;
+  
+            // Couleurs dynamiques pour les types de Pokémon
+            &.fire {
+              background-color: #fddfdf;
+              color: #e35d5b;
+            }
+  
+            &.water {
+              background-color: #def3fd;
+              color: #539dff;
+            }
+  
+            &.grass {
+              background-color: #e0f3e4;
+              color: #3bb075;
+            }
+  
+            &.electric {
+              background-color: #fcf7de;
+              color: #e2bb05;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+        .pokemon-info {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      
+        .pokemon-header img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      
+  }
+  

@@ -1,0 +1,35 @@
+@use 'variables' as vars;
+// Reset basique
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Typographie globale
+body {
+  font-family: vars.$font-family;
+  font-size: vars.$paragraph-font-size;
+  color: vars.$text-color;
+  background-color: vars.$background-color;
+  line-height: 1.5;
+}
+
+// Titres
+h1, h2, h3, h4, h5, h6 {
+  font-size: vars.$heading-font-size;
+  margin-bottom: vars.$spacing-unit;
+  color: vars.$primary-color;
+}
+// Mobile first design
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .pokemon-container {
+    grid-template-columns: 1fr; // Une seule colonne sur mobile
+  }
+}

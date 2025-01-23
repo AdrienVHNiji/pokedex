@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "stylePreprocessorOptions": {
+            "includePaths": [
+              "src/styles"
+            ]
+            },
             "outputPath": "dist/pokedex",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -32,7 +37,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           },

@@ -1,22 +1,8 @@
-<div class="container">
-    <h1 class="my-4">Pokédex</h1>
-    <div class="row">
-      <div
-        class="col-md-3 mb-4"
-        *ngFor="let pokemon of pokemons"
-        (click)="selectPokemon(pokemon.name)"
-      >
-        <div class="card">
-          <img
-            [src]="pokemon.image"
-            class="card-img-top"
-            [alt]="pokemon.name"
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title text-capitalize">{{ pokemon.name }}</h5>
-          </div>
-        </div>
-      </div>
+<div class="pokemon-container">
+  <div class="pokemon-card" *ngFor="let pokemon of pokemons">
+    <img [src]="pokemon.image" [alt]="pokemon.name" />
+    <div class="card-body">
+      <h5>{{ pokemon.name }}</h5>
     </div>
   </div>
-  
+</div>
