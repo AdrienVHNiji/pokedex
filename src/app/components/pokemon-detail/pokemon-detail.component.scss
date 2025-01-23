@@ -169,4 +169,38 @@
       }
       
   }
+
+  .btn-back {
+    display: inline-flex; /* Aligne l'icône et le texte */
+    align-items: center; /* Centrer verticalement */
+    gap: 0.5rem; /* Espace entre l'icône et le texte */
+    background-color: #2a75bb; /* Bleu Pokémon */
+    color: #fff; /* Texte blanc */
+    border: none;
+    border-radius: 8px; /* Coins arrondis */
+    padding: 0.8rem 1.5rem; /* Espacements internes */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: bold;
+    cursor: pointer; /* Curseur pointeur */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    &:hover {
+      background-color: #1e5a93; /* Bleu foncé au survol */
+      transform: scale(1.05); /* Léger zoom */
+    }
+  
+    &:active {
+      transform: scale(0.95); /* Réduction sur clic */
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(42, 117, 187, 0.5); /* Contour de focus */
+    }
+  }
+  .btn-back i {
+    font-size: 1.2rem; /* Taille de l'icône */
+  }
+  
   
