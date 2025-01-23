@@ -17,8 +17,14 @@ body {
   line-height: 1.5;
 }
 
+h1 {
+  color: vars.$Black;
+  font-size: 3rem;
+  text-align: center;
+}
+
 // Titres
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-size: vars.$heading-font-size;
   margin-bottom: vars.$spacing-unit;
   color: vars.$primary-color;

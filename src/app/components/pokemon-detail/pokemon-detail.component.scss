@@ -66,21 +66,92 @@
               background-color: #fddfdf;
               color: #e35d5b;
             }
-  
+            
             &.water {
               background-color: #def3fd;
               color: #539dff;
             }
-  
+            
             &.grass {
               background-color: #e0f3e4;
               color: #3bb075;
             }
-  
+            
             &.electric {
               background-color: #fcf7de;
               color: #e2bb05;
             }
+            
+            &.ice {
+              background-color: #def3fd;
+              color: #74cfcf;
+            }
+            
+            &.fighting {
+              background-color: #e6e0d4;
+              color: #d67873;
+            }
+            
+            &.poison {
+              background-color: #f6ddef;
+              color: #b567ce;
+            }
+            
+            &.ground {
+              background-color: #f0e5c9;
+              color: #d1b055;
+            }
+            
+            &.flying {
+              background-color: #eae3ff;
+              color: #a98ff3;
+            }
+            
+            &.psychic {
+              background-color: #fdd1e8;
+              color: #f85888;
+            }
+            
+            &.bug {
+              background-color: #f8f2de;
+              color: #92bc2c;
+            }
+            
+            &.rock {
+              background-color: #e8d8c4;
+              color: #c9bb8a;
+            }
+            
+            &.ghost {
+              background-color: #ece0f8;
+              color: #70559b;
+            }
+            
+            &.dark {
+              background-color: #d5d5d5;
+              color: #6f6e78;
+            }
+            
+            &.dragon {
+              background-color: #d0e7f8;
+              color: #7038f8;
+            }
+            
+            &.steel {
+              background-color: #e1e1f0;
+              color: #5695a3;
+            }
+            
+            &.fairy {
+              background-color: #fceaff;
+              color: #ec8fe6;
+            }
+            
+            &.normal {
+              background-color: #f5f5f5;
+              color: #a8a77a;
+            }
+            
           }
         }
       }
