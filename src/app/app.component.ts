@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true, 
   imports: [RouterOutlet], 
   template: `
-    <h1 class='title'>Pokédex</h1>
+    <h1 class='titleWebSite'>Pokédex</h1>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss'],
