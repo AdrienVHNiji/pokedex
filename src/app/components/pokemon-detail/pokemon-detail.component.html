@@ -24,6 +24,15 @@
     </div>
   </div>
 </div>
+<div class="navigation-arrows">
+  <button class="arrow arrow-left" (click)="navigateToPreviousPokemon()" [disabled]="currentPokemonIndex === 0">
+    ⬅
+  </button>
+  <button class="arrow arrow-right" (click)="navigateToNextPokemon()" [disabled]="currentPokemonIndex === pokemonList.length - 1">
+    ➡
+  </button>
+</div>
+
   <button class="btn-back" (click)="goBack()"><i class="bi bi-arrow-left"></i>Retour à la liste</button>
 
 
