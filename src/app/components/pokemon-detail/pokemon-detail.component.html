@@ -1,9 +1,12 @@
+<div class="navigation">
+  <button class="arrow" (click)="navigateToPreviousPokemon()" [disabled]="currentPokemonIndex === 0">
+    ⬅
+  </button>
 <div class="pokemon-detail-container">
   <div class="pokemon-header">
     <img [src]="pokemon?.sprites?.front_default" [alt]="pokemon?.name" />
     <h1>{{ pokemon?.name | titlecase }}</h1>
   </div>
-
   <div class="pokemon-info">
     <div class="pokemon-types">
       <h3>Types</h3>
@@ -24,15 +27,11 @@
     </div>
   </div>
 </div>
-<div class="navigation-arrows">
-  <button class="arrow arrow-left" (click)="navigateToPreviousPokemon()" [disabled]="currentPokemonIndex === 0">
-    ⬅
-  </button>
-  <button class="arrow arrow-right" (click)="navigateToNextPokemon()" [disabled]="currentPokemonIndex === pokemonList.length - 1">
+  <button class="arrow" (click)="navigateToNextPokemon()" [disabled]="currentPokemonIndex === pokemonList.length - 1">
     ➡
   </button>
 </div>
-
+<div class="btn-back-container">
   <button class="btn-back" (click)="goBack()"><i class="bi bi-arrow-left"></i>Retour à la liste</button>
-
+</div>
 
