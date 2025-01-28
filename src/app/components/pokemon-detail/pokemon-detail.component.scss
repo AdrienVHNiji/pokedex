@@ -1,6 +1,6 @@
-@use 'variables' as vars;
-@use 'mixins' as mixs;
-@use 'base' as base;
+@use 'src/styles/variables' as vars;
+@use 'src/styles/mixins' as mixs;
+@use 'src/styles/base' as base;
 
 .navigation {
   display: flex;

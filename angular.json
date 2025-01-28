@@ -18,9 +18,9 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "stylePreprocessorOptions": {
-            "includePaths": [
-              "src/styles"
-            ]
+              "includePaths": [
+                "src/styles"
+              ]
             },
             "outputPath": "dist/pokedex",
             "index": "src/index.html",
@@ -100,8 +100,59 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "pokedex:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pokedex:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "pokedex:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "pokedex:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "pokedex:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pokedex:serve:production"
+            }
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }
