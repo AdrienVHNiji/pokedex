@@ -59,6 +59,6 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    window.history.back();
+    this.router.navigate(['/']);
   }
 }
