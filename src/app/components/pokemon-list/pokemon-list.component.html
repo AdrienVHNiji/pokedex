@@ -1,9 +1,30 @@
 <div class="pokemon-container">
-  <div class="pokemon-card" *ngFor="let pokemon of pokemons"
-  (click)="selectPokemon(pokemon.name)">
-    <img [src]="pokemon.image" [alt]="pokemon.name" />
+  <div
+    class="pokemon-card"
+    *ngFor="let pokemon of pokemons"
+    (click)="selectPokemon(pokemon.name)"
+  >
+    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (pokemons.indexOf(pokemon) + 1 + (currentPage - 1) * limit) + '.png'" [alt]="pokemon.name" />
     <div class="card-body">
-      <h5>{{ pokemon.name }}</h5>
+      <h5>{{ pokemon.name | titlecase }}</h5>
     </div>
   </div>
+</div>
+
+<div class="pagination">
+  <button
+    class="btn-page"
+    (click)="goToPreviousPage()"
+    [disabled]="currentPage === 1"
+  >
+    Précédent
+  </button>
+  <span>Page {{ currentPage }}</span>
+  <button
+    class="btn-page"
+    (click)="goToNextPage()"
+    [disabled]="currentPage * limit >= totalPokemons"
+  >
+    Suivant
+  </button>
 </div>

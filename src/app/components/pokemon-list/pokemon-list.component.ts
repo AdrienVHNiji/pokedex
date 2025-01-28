@@ -12,20 +12,40 @@ import { Router } from '@angular/router';
 })
 export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
-  
+  currentPage: number = 1;
+  limit: number = 49;
+  totalPokemons: number = 0;
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
 
   ngOnInit(): void {
-    this.pokemonService.getPokemons(49).subscribe((response : any) => {
-      this.pokemons = response.results.map((poke: any, index: number) => ({
-        id: index + 1,
-        name: poke.name,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
-        types: [],
-      }));
-    });
-  }
+      this.loadPokemons();
+    }
+  
+    
+    loadPokemons(): void {
+      const offset = (this.currentPage - 1) * this.limit;
+  
+      this.pokemonService.getPokemons(this.limit, offset).subscribe((response) => {
+        this.pokemons = response.results;
+        this.totalPokemons = response.count; 
+      });
+    }
+  
+    goToNextPage(): void {
+      if (this.currentPage * this.limit < this.totalPokemons) {
+        this.currentPage++;
+        this.loadPokemons();
+      }
+    }
+
+    goToPreviousPage(): void {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+        this.loadPokemons();
+      }
+    }
+
   selectPokemon(name: string): void {
     this.router.navigate(['/pokemon', name]);
   }
