@@ -11,16 +11,20 @@ import { PokemonService } from '../../../core/services/pokemon.service';
   styleUrls: ['./pokemon-detail.component.scss'],
 })
 export class PokemonDetailComponent implements OnInit {
+  // Current Pokémon details
   pokemon: any;
+  // List of all Pokémon for navigation
   pokemonList: any[] = []; 
+  // Index of the current Pokémon in the list
   currentPokemonIndex: number = 0; 
 
   constructor(
-    private route: ActivatedRoute,
-    private pokemonService: PokemonService,
-    private router: Router
+    private readonly route: ActivatedRoute,
+    private readonly pokemonService: PokemonService,
+    private readonly router: Router
   ) {}
 
+  // Initialize component and load Pokémon details
   ngOnInit(): void {
     this.pokemonService.getPokemons(this.pokemonList.length, 1).subscribe((response) => {
       this.pokemonList = response.results;
@@ -38,12 +42,14 @@ export class PokemonDetailComponent implements OnInit {
     });
   }
 
+  // Fetch detailed information about a specific Pokémon
   getPokemonDetails(name: string): void {
     this.pokemonService.getPokemonDetails(name).subscribe((data) => {
       this.pokemon = data;
     });
   }
 
+  // Navigate to the previous Pokémon in the list
   navigateToPreviousPokemon(): void {
     if (this.currentPokemonIndex > 0) {
       const previousPokemon = this.pokemonList[this.currentPokemonIndex - 1];
@@ -51,6 +57,7 @@ export class PokemonDetailComponent implements OnInit {
     }
   }
 
+  // Navigate to the next Pokémon in the list
   navigateToNextPokemon(): void {
     if (this.currentPokemonIndex < this.pokemonList.length - 1) {
       const nextPokemon = this.pokemonList[this.currentPokemonIndex + 1];
@@ -58,6 +65,7 @@ export class PokemonDetailComponent implements OnInit {
     }
   }
 
+  // Return to the Pokémon list view
   goBack(): void {
     this.router.navigate(['/']);
   }

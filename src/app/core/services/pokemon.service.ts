@@ -3,19 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root', // Cela rend le service disponible globalement
+  providedIn: 'root', // Makes the service globally available
 })
 export class PokemonService {
-  private readonly apiUrl = 'https://pokeapi.co/api/v2'; // URL de l'API PokeAPI
+  private readonly apiUrl = 'https://pokeapi.co/api/v2'; // PokeAPI base URL
 
   constructor(private readonly http: HttpClient) {}
 
-  // Récupérer la liste des Pokémon
+  // Get a list of Pokémon with pagination
   getPokemons(limit: number, offset: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/pokemon?limit=${limit}&offset=${offset}`);
   }
 
-  // Récupérer les détails d'un Pokémon spécifique
+  // Get detailed information about a specific Pokémon
   getPokemonDetails(name: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/pokemon/${name}`);
   }
