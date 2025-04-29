@@ -60,6 +60,29 @@
   gap: 1rem;
   margin-top: 2rem;
 
+  .page-numbers {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-number {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(42, 117, 187, 0.1);
+    }
+
+    &.active {
+      background-color: #2a75bb;
+      color: white;
+    }
+  }
+
   .btn-page {
     background-color: #2a75bb;
     color: white;

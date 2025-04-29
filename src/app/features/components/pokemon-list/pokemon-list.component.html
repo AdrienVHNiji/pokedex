@@ -19,7 +19,25 @@
   >
     Précédent
   </button>
-  <span>Page {{ currentPage }}</span>
+  <div class="page-numbers">
+    <ng-container *ngFor="let page of getPagesToDisplay()">
+      <span
+        [class.active]="currentPage === page"
+        (click)="goToPage(page)"
+        class="page-number"
+      >
+        {{ page }}
+      </span>
+      <span 
+        *ngIf="page === 1 && currentPage > 3" 
+        class="page-number"
+      >...</span>
+      <span 
+        *ngIf="page === getTotalPages() - 1 && currentPage < getTotalPages() - 2" 
+        class="page-number"
+      >...</span>
+    </ng-container>
+  </div>
   <button
     class="btn-page"
     (click)="goToNextPage()"

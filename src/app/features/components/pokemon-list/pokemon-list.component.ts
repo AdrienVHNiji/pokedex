@@ -27,6 +27,55 @@ export class PokemonListComponent implements OnInit {
     this.loadPokemons();
   }
   
+  // Calculate total number of pages
+  getTotalPages(): number {
+    return Math.ceil(this.totalPokemons / this.limit);
+  }
+
+  // Get pages to display
+  getPagesToDisplay(): number[] {
+    const totalPages = this.getTotalPages();
+    const pages: number[] = [];
+    
+    // Always add first page
+    pages.push(1);
+    
+    // Add pages based on current position
+    if (this.currentPage === 1) {
+      // If on first page, show next 4 pages
+      for (let i = 2; i <= Math.min(5, totalPages); i++) {
+        pages.push(i);
+      }
+    } else if (this.currentPage === totalPages) {
+      // If on last page, show previous 4 pages
+      for (let i = Math.max(totalPages - 4, 2); i < totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      // If in the middle, show 2 pages before and 2 pages after
+      const start = Math.max(2, this.currentPage - 2);
+      const end = Math.min(totalPages - 1, this.currentPage + 2);
+      for (let i = start; i <= end; i++) {
+        pages.push(i);
+      }
+    }
+    
+    // Add last page if not already included
+    if (totalPages > 1 && !pages.includes(totalPages)) {
+      pages.push(totalPages);
+    }
+    
+    return pages;
+  }
+
+  // Navigate to a specific page
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.getTotalPages()) {
+      this.currentPage = page;
+      this.loadPokemons();
+    }
+  }
+  
   // Load Pokémon for the current page
   loadPokemons(): void {
     const offset = (this.currentPage - 1) * this.limit;
