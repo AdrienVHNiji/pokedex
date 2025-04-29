@@ -1,7 +1,7 @@
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PokemonService } from '../../core/services/pokemon.service';
+import { PokemonService } from '../../../core/services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-detail',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../../core/services/pokemon.service';
+import { PokemonService } from '../../../core/services/pokemon.service';
 import { CommonModule } from '@angular/common'; // Import pour utiliser ngFor et d'autres directives Angular
 import { Router } from '@angular/router';
 
