@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root', // Cela rend le service disponible globalement
 })
 export class PokemonService {
-  private apiUrl = 'https://pokeapi.co/api/v2'; // URL de l'API PokeAPI
+  private readonly apiUrl = 'https://pokeapi.co/api/v2'; // URL de l'API PokeAPI
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   // Récupérer la liste des Pokémon
   getPokemons(limit: number, offset: number): Observable<any> {

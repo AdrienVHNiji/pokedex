@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonService } from '../../core/services/pokemon.service';
 import { CommonModule } from '@angular/common'; // Import pour utiliser ngFor et d'autres directives Angular
 import { Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ export class PokemonListComponent implements OnInit {
   limit: number = 49;
   totalPokemons: number = 0;
 
-  constructor(private pokemonService: PokemonService, private router: Router) {}
+  constructor(private readonly pokemonService: PokemonService, private readonly router: Router) {}
 
   ngOnInit(): void {
       this.loadPokemons();

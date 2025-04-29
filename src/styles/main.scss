@@ -1,12 +1,12 @@
-@use 'variables' as vars;
-@use 'mixins' as mixs;
-@use 'base' as base;
+@use '_variables' as vars;
+@use '_mixins' as mixs;
+@use '_base' as base;
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 @font-face {
     font-family: 'PokemonFont'; 
-    src: url('src/app/assests/fonts/pokemon-font.ttf') format('truetype'); 
+    src: url('src/app/shared/assets/fonts/pokemon-font.ttf') format('truetype'); 
     font-weight: normal; 
     font-style: normal;  
-  }
+}
   

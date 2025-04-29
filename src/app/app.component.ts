@@ -9,6 +9,5 @@ import { RouterOutlet } from '@angular/router';
     <h1 class='titleWebSite'>Pokédex</h1>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {}
